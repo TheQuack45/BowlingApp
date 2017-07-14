@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="BowlingApp.BowlerFrame"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BowlingApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Margin="2,0,2,0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="spareButton" Content="/" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Click="spareButton_Click"/>
+        <Button x:Name="strikeButton" Content="X" FontWeight="Bold" Grid.Row="0" Grid.Column="1" Click="strikeButton_Click"/>
+        <TextBox x:Name="firstBallTextBox" Grid.Row="1" Grid.Column="0" KeyDown="commonKeyDownEventHandler" TextChanged="commonTextChangedEventHandler" Style="{StaticResource FrameTextBoxesStyle}"/>
+        <TextBox x:Name="secondBallTextBox" Grid.Row="1" Grid.Column="1" KeyDown="commonKeyDownEventHandler" TextChanged="commonTextChangedEventHandler" Style="{StaticResource FrameTextBoxesStyle}"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="BowlingApp.BowlerFrames"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BowlingApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="bowlerName" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="2,2,2,2" Style="{StaticResource FrameTextBoxesStyle}"/>
+        <Button x:Name="bowlerNameLock" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="Lock Name" Margin="2,2,2,2" Click="bowlerNameLock_Click"/>
+        <TextBox x:Name="bowlerScore" Grid.Row="0" Grid.Column="9" Margin="2,2,2,2" TextAlignment="Right" IsReadOnly="True" Style="{StaticResource FrameTextBoxesStyle}"/>
+
+        <local:BowlerFrame x:Name="firstFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="0"/>
+        <local:BowlerFrame x:Name="secondFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="1"/>
+        <local:BowlerFrame x:Name="thirdFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="2"/>
+        <local:BowlerFrame x:Name="fourthFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="3"/>
+        <local:BowlerFrame x:Name="fifthFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="4"/>
+        <local:BowlerFrame x:Name="sixthFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="5"/>
+        <local:BowlerFrame x:Name="seventhFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="6"/>
+        <local:BowlerFrame x:Name="eighthFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="7"/>
+        <local:BowlerFrame x:Name="ninthFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="8"/>
+        <local:FinalBowlerFrame x:Name="tenthFrame" TextChanged="RecalculateScore" Grid.Row="1" Grid.Column="9"/>
+    </Grid>
+</UserControl>
